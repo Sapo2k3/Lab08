@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Assertions;
+
 public class TestStrictBankAccount {
 
     private final static int INITIAL_AMOUNT = 100;
@@ -67,6 +69,7 @@ public class TestStrictBankAccount {
         assertFalse(bankAccount.getTransactionsCount() > 0);
         try {
             bankAccount.withdraw(this.mRossi.getUserID(), negativeWithdraw);
+            Assertions.fail("The withdraw was successful but should throw an exception");
         } catch(IllegalArgumentException e){
             assertEquals("Cannot withdraw a negative amount", e.getMessage());
             assertEquals(this.bankAccount.getBalance(), expectedBalance);
@@ -84,6 +87,7 @@ public class TestStrictBankAccount {
         assertFalse(bankAccount.getTransactionsCount() > 0);
         try {
             bankAccount.withdraw(mRossi.getUserID(), amount);
+            Assertions.fail("The withdraw was successful but should throw an exception");
         } catch (IllegalArgumentException e) {
             assertEquals("Insufficient balance", e.getMessage());
             assertEquals(this.bankAccount.getBalance(), expectedBalance);
