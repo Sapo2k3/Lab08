@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.unibo.deathnote.TestDeathNote" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-11-18T13:51:55" hostname="ALENOTEBOOK" time="6.427">
+  <properties/>
+  <testcase name="testDetailsTimer()" classname="it.unibo.deathnote.TestDeathNote" time="6.241"/>
+  <testcase name="testEmptyRules()" classname="it.unibo.deathnote.TestDeathNote" time="0.006"/>
+  <testcase name="testWriteAName()" classname="it.unibo.deathnote.TestDeathNote" time="0.008"/>
+  <testcase name="testDeathTimer()" classname="it.unibo.deathnote.TestDeathNote" time="0.109"/>
+  <testcase name="testGetRule()" classname="it.unibo.deathnote.TestDeathNote" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
