@@ -9,6 +9,8 @@ public class DeathNoteImpl implements DeathNote{
     private Death death = new Death();
     private String lastNameWritten = "";
     private Long TIMER;
+    private int DEFAULT_DEATH_TIMER = 40;
+    private int DEFAULT_DETAILS_TIMER = 6040;
 
     public boolean noNameWritten(){
         if(deathnote.values().isEmpty()) {
@@ -42,7 +44,7 @@ public class DeathNoteImpl implements DeathNote{
         if(lastNameWritten.isBlank() || cause.isEmpty()){
             throw new IllegalStateException("There is no name written in this DeathNote or the cause is null");
         }
-        if(System.currentTimeMillis() - TIMER <= 40){
+        if(System.currentTimeMillis() - TIMER <= DEFAULT_DEATH_TIMER){
             death.setDeath(cause);
             deathnote.replace(lastNameWritten, death);
             return true;
@@ -55,7 +57,7 @@ public class DeathNoteImpl implements DeathNote{
          if(lastNameWritten.isEmpty() || details.isEmpty()){
             throw new IllegalStateException("There is no name written in this Death Note or the details are null");
         }
-        if(System.currentTimeMillis() - TIMER <= 6040){
+        if(System.currentTimeMillis() - TIMER <= DEFAULT_DETAILS_TIMER){
             death.setDetails(details);
             deathnote.replace(lastNameWritten, death);
             return true;
